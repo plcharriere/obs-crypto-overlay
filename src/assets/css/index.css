@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    height: 100%;
+}
+.bg-binance {
+  background-color: rgb(27,29,34); /* #1b1d22 */
+}
+.bg-binance-opacity {
+  background-color: rgba(27,29,34, 0.7)
+}
+.border-binance {
+  border-color: #f0b90b;
+}
+.text-binance {
+  color: #f0b90b;
+}
+.text-black-shadow {
+  text-shadow: 0px 0px 5px #000, 0px 0px 5px #000;
+}
+.text-blacker-shadow {
+  text-shadow: 0px 0px 6px #000, 0px 0px 6px #000;
+}
+.divide-binance > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgba(94, 73, 4, var(--tw-divide-opacity));
+}
