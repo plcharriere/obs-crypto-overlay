@@ -7,22 +7,21 @@
       <div class="text-right text-black-shadow ">
         $<span id="start-price"></span>
       </div>
-      <div
-        class="relative w-full mx-3 text-center border-2 shadow border-binance bar-box"
-        style="height: 40px"
-      >
+      <div class="relative flex justify-center items-center w-full mx-3">
         <div
-          class="absolute h-full bg-green-500 transition-progress progress-bg progress-radius"
-          :style="{ width: percent + '%' }"
-        ></div>
-        <div
-          class="absolute h-full transition-progress bg-money progress-bg progress-radius"
-          :style="{ width: percent + '%' }"
-        ></div>
-        <div
-          class="absolute w-full font-semibold text-white text-black-shadow"
-          style="left: 50%;transform: translate(-50%);"
+          class="relative w-full border-2 shadow border-binance bar-box overflow-hidden"
+          style="height: 40px"
         >
+          <div
+            class="absolute h-full bg-green-500 transition-progress progress-bg progress-radius"
+            :style="{ width: percent + '%' }"
+          ></div>
+          <div
+            class="absolute h-full transition-progress bg-money progress-bg progress-radius"
+            :style="{ width: percent + '%' }"
+          ></div>
+        </div>
+        <div class="absolute font-semibold text-white text-black-shadow">
           <div
             id="balance"
             class="inline-block animate__animated animate__slow"
