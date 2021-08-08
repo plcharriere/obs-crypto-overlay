@@ -1,6 +1,8 @@
 <template>
-  <HeaderView class="header" />
-  <FooterView class="footer" />
+  <div class="relative border-2 border-binance w-full h-full overflow-hidden">
+    <HeaderView class="w-full" />
+    <FooterView class="footer absolute w-full" />
+  </div>
 </template>
 
 <script>
@@ -16,18 +18,9 @@ export default {
 };
 </script>
 
-<style scoped>
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
+<style scoped lang="scss">
 .footer {
-  position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
 }
 </style>

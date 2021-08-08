@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 .arrow-up {
   width: 0;
   height: 0;

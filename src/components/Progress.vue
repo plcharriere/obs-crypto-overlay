@@ -145,7 +145,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .progress-bg {
   max-width: 100%;
   border-radius: 0 30px 30px 0;

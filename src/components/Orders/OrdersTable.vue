@@ -40,9 +40,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-.text-black-shadow {
-  text-shadow: 0px 0px 3px #000, 0px 0px 3px #000;
-}
-</style>
