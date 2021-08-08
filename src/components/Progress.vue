@@ -154,7 +154,7 @@ export default {
   border-radius: 30px;
 }
 .progress-radius {
-  border-radius: 30px 0px 0px 30px;
+  border-radius: 30px;
 }
 .bg-money {
   background: url("https://wallpaperaccess.com/full/333536.jpg") repeat;
