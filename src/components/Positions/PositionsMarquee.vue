@@ -20,8 +20,8 @@
         {{ position.symbol }}
         <span class="text-binance">{{ position.leverage }}✕</span>
         <span>{{ " " }}</span>
-        <span :class="getPositionSideClass(position.positionSide)">{{
-          getPositionSideString(position.positionSide)
+        <span :class="getPositionSideClass(getPositionSideString(position))">{{
+          getPositionSideString(position)
         }}</span>
         <span style="word-spacing: normal;">
           {{ position.positionAmt }} @
@@ -50,8 +50,6 @@
 <script>
 import numeral from "numeral";
 
-import { formatEnum } from "@/main";
-
 const animationClass = "animate__flash";
 
 export default {
@@ -75,8 +73,9 @@ export default {
       if (side.toLowerCase().includes("long")) return "text-green-400";
       return "text-red-500";
     },
-    getPositionSideString(side) {
-      return formatEnum(side) + " ";
+    getPositionSideString(position) {
+      if (position.entryPrice > position.liquidationPrice) return "Long ";
+      return "Short ";
     },
     getPositionPnlClass(pnl) {
       if (Number(pnl) > 0) return "text-green-500";
