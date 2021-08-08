@@ -28,17 +28,38 @@ cp .env.example .env
 
 Configure your `.env` file with your name and your Binance keys.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## How to use
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Run the app in development mode with `npm run serve` or build it for production with `npm run build` and host it with a web server.
 
-### Lints and fixes files
-```
-npm run lint
-```
+`/main`
+
+Displays the main view.
+
+`/idle?title=Your title&text=Your text`
+
+Displays the idle view with desired title and text.
+
+`/orders`
+
+Displays only the order component.
+
+`/positions`
+
+Displays only the positions component.
+
+`/header`
+
+Displays only the header component.
+
+`/footer`
+
+Displays only the footer component.
+
+`/btcprice`
+
+Displays only the Bitcoin price component.
+
+`/progress`
+
+Displays only the progress bar component.
