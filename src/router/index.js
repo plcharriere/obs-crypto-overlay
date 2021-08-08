@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import MainView from "../views/MainView.vue";
 import ProgressView from "../views/ProgressView.vue";
 import OrdersView from "../views/OrdersView.vue";
 import PositionsView from "../views/PositionsView.vue";
@@ -9,6 +10,11 @@ import HeaderView from "../views/HeaderView.vue";
 import ScreenView from "../views/ScreenView.vue";
 
 const routes = [
+  {
+    path: "/main",
+    name: "Main",
+    component: MainView
+  },
   {
     path: "/progress",
     name: "Progress",
