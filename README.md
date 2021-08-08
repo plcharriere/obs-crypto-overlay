@@ -6,10 +6,10 @@ It will display your Binance Futures balance, positions and orders on screen.
 
 ## Screenshots
 ### Idle view
-![Welcome Screen Demonstration Screenshot](https://i.imgur.com/dAwdqIU.png)
+![Idle view screenshot](https://i.imgur.com/dAwdqIU.png)
 
-### Main stream view
-![Streaming Demonstration Screenshot](https://i.imgur.com/mwc2cI3.png)
+### Main view
+![Main view screenshot](https://i.imgur.com/JgJsr3o.png)
 
 ## Warnings
 
