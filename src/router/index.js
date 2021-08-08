@@ -7,7 +7,7 @@ import FooterView from "../views/FooterView.vue";
 import BackgroundView from "../views/BackgroundView.vue";
 import BTCPriceView from "../views/BTCPriceView.vue";
 import HeaderView from "../views/HeaderView.vue";
-import ScreenView from "../views/ScreenView.vue";
+import IdleView from "../views/IdleView.vue";
 
 const routes = [
   {
@@ -51,9 +51,9 @@ const routes = [
     component: HeaderView
   },
   {
-    path: "/screen",
-    name: "Screen",
-    component: ScreenView
+    path: "/idle",
+    name: "Idle",
+    component: IdleView
   }
 ];
 
