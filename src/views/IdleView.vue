@@ -11,9 +11,11 @@
     <div
       class="flex flex-col items-center justify-center w-full h-full text-2xl text-white border-2 border-binance bg-binance-opacity text-black-shadow"
     >
-      <div class="text-6xl font-medium text-binance">{{ title }}</div>
-      <div class="mt-10 text-3xl">
-        {{ message }}
+      <div v-if="title.length > 0" class="text-6xl font-medium text-binance">
+        {{ title }}
+      </div>
+      <div v-if="text.length > 0" class="mt-10 text-3xl">
+        {{ text }}
       </div>
       <div class="flex pt-5 mt-10">
         <img
@@ -23,7 +25,7 @@
         /><img src="../assets/img/instagram.webp" style="height: 32px" />
       </div>
       <span class="mt-3 text-binance" style="font-size: 1.7rem">
-        @{{ getSocial() }}</span
+        @{{ getSocialUsername() }}</span
       >
     </div>
     <TradingView
@@ -49,42 +51,17 @@ export default {
   data() {
     return {
       title: "",
-      message: "",
-      screens: {
-        start: {
-          title: "Début du live !",
-          message: "Le live va bientôt commencer, j'arrive les kheys !"
-        },
-        end: {
-          title: "Fin du live !",
-          message:
-            "Le live est maintenant terminé, merci d'avoir suivi les kheys !"
-        },
-        idle: {
-          title: "Pause !",
-          message:
-            "Je fais une petite pause, je reviens tout de suite les kheys !"
-        }
-      }
+      text: ""
     };
   },
   mounted() {
-    if (this.$route.query.start !== undefined) {
-      this.title = this.screens.start.title;
-      this.message = this.screens.start.message;
-    } else if (this.$route.query.end !== undefined) {
-      this.title = this.screens.end.title;
-      this.message = this.screens.end.message;
-    } else if (this.$route.query.idle !== undefined) {
-      this.title = this.screens.idle.title;
-      this.message = this.screens.idle.message;
-    } else {
-      this.title = "";
-      this.message = "";
-    }
+    if (this.$route.query.title !== undefined)
+      this.title = this.$route.query.title;
+    if (this.$route.query.text !== undefined)
+      this.text = this.$route.query.text;
   },
   methods: {
-    getSocial() {
+    getSocialUsername() {
       return process.env.VUE_APP_SOCIAL_USERNAME;
     }
   }
