@@ -70,12 +70,17 @@ export default {
     getOrderSideString(order) {
       let str = "";
       if (this.dualSidePosition) {
-        if (order.side == "BUY") str = "OPEN";
-        if (order.side == "SELL") str = "CLOSE";
+        if (order.side === "BUY") str = "OPEN";
+        if (order.side === "SELL") str = "CLOSE";
       } else {
         str = order.side;
       }
-      return formatEnum(str + " " + order.positionSide);
+      if (order.side === "BUY") {
+        str += " Long";
+      } else if (order.side === "SELL") {
+        str += " Short";
+      }
+      return formatEnum(str);
     },
     isSymbolDollar(symbol) {
       if (symbol.slice(-4) === "USDT") {
