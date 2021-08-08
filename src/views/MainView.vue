@@ -8,6 +8,7 @@ import HeaderView from "@/views/HeaderView.vue";
 import FooterView from "@/views/FooterView.vue";
 
 export default {
+  name: "MainView",
   components: {
     HeaderView,
     FooterView

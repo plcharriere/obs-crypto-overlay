@@ -42,6 +42,7 @@ import Orders from "@/components/Orders/Orders.vue";
 import TradingView from "@/components/TradingView.vue";
 
 export default {
+  name: "IdleView",
   components: {
     PriceProgressWidget,
     TradingView,

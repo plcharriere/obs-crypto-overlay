@@ -16,9 +16,9 @@ const routes = [
     component: MainView
   },
   {
-    path: "/progress",
-    name: "Progress",
-    component: ProgressView
+    path: "/idle",
+    name: "Idle",
+    component: IdleView
   },
   {
     path: "/orders",
@@ -31,14 +31,14 @@ const routes = [
     component: PositionsView
   },
   {
+    path: "/header",
+    name: "Header",
+    component: HeaderView
+  },
+  {
     path: "/footer",
     name: "Footer",
     component: FooterView
-  },
-  {
-    path: "/background",
-    name: "Background",
-    component: BackgroundView
   },
   {
     path: "/btcprice",
@@ -46,14 +46,14 @@ const routes = [
     component: BTCPriceView
   },
   {
-    path: "/header",
-    name: "Header",
-    component: HeaderView
+    path: "/progress",
+    name: "Progress",
+    component: ProgressView
   },
   {
-    path: "/idle",
-    name: "Idle",
-    component: IdleView
+    path: "/background",
+    name: "Background",
+    component: BackgroundView
   }
 ];
 
