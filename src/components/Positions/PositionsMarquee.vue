@@ -17,7 +17,7 @@
         v-for="position in positions"
         v-bind:key="position.entry"
       >
-        {{ position.symbol }}
+        {{ formatSymbolPair(position.symbol) }}
         <span class="text-binance">{{ position.leverage }}✕</span>
         <span>{{ " " }}</span>
         <span :class="getPositionSideClass(getPositionSideString(position))">{{
@@ -49,7 +49,7 @@
 
 <script>
 import numeral from "numeral";
-import { isSymbolDollar, formatNumber } from "@/utils.js";
+import { isSymbolDollar, formatNumber, formatSymbolPair } from "@/utils.js";
 
 const animationClass = "animate__flash";
 
@@ -98,7 +98,8 @@ export default {
       return str;
     },
     isSymbolDollar,
-    formatNumber
+    formatNumber,
+    formatSymbolPair
   }
 };
 </script>

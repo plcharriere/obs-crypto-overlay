@@ -13,7 +13,7 @@
       style="flex-shrink: 1;flex-grow: 0;word-spacing: 4px;"
     >
       <span class="px-6" v-for="order in orders" v-bind:key="order.id">
-        {{ order.symbol }}
+        {{ formatSymbolPair(order.symbol) }}
         <span
           :class="getOrderSideClass(order.side)"
           style="word-spacing: normal"
@@ -41,7 +41,12 @@
 </template>
 
 <script>
-import { isSymbolDollar, formatNumber, formatEnum } from "@/utils.js";
+import {
+  isSymbolDollar,
+  formatNumber,
+  formatEnum,
+  formatSymbolPair
+} from "@/utils.js";
 
 const animationClass = "animate__flash";
 
@@ -84,7 +89,8 @@ export default {
       return formatEnum(type, false);
     },
     isSymbolDollar,
-    formatNumber
+    formatNumber,
+    formatSymbolPair
   }
 };
 </script>

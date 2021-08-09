@@ -26,3 +26,20 @@ export function formatEnum(str, capitalize = true) {
   }
   return str;
 }
+
+export function formatPairBySymbol(symbol, symbolFormat) {
+  if (symbol.slice(-symbolFormat.length) === symbolFormat)
+    return (
+      symbol.slice(0, symbol.length - symbolFormat.length) + "/" + symbolFormat
+    );
+  return false;
+}
+
+export function formatSymbolPair(symbol) {
+  const formatSymbols = ["BTC", "USDT", "ETH"];
+  for (let i = 0; i < formatSymbols.length; i++) {
+    const pair = formatPairBySymbol(symbol, formatSymbols[i]);
+    if (pair !== false) return pair;
+  }
+  return symbol;
+}
