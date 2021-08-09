@@ -37,9 +37,12 @@
       class="flex items-center justify-center w-full pr-6 text-lg text-white text-black-shadow"
     >
       <span id="percent"></span>%<span class="mx-3 text-binance">|</span
-      ><span class="">x<span id="multiplier"></span></span
+      ><span>x<span id="multiplier"></span></span
       ><span class="mx-3 text-binance">|</span
-      ><span class="">+<span id="percent-change"></span>%</span>
+      ><span
+        ><span v-if="percentChange > 0">+</span
+        ><span id="percent-change"></span>%</span
+      >
     </div>
   </div>
 </template>
@@ -60,6 +63,7 @@ export default {
       endPrice: Number(process.env.VUE_APP_GOAL_END),
       balance: 0,
       percent: 0,
+      percentChange: 0,
 
       startPriceCountUp: undefined,
       endPriceCountUp: undefined,
@@ -118,7 +122,10 @@ export default {
               (this.endPrice - this.startPrice)) *
             100;
         } else {
-          this.percent = (this.balance / this.startPrice - 1) * 100;
+          this.percent = Math.max(
+            0,
+            (this.balance / this.startPrice - 1) * 100
+          );
         }
       }
       if (this.balance !== oldBalance) {
@@ -134,11 +141,13 @@ export default {
         }, 2100);
       }
 
+      const difference = this.balance - this.startPrice;
+      this.percentChange = (difference / this.startPrice) * 100;
+
       this.balanceCountUp.update(this.balance);
       this.percentCountUp.update(this.percent);
       this.multiplierCountUp.update(this.balance / this.startPrice);
-      const difference = this.balance - this.startPrice;
-      this.percentChangeCountUp.update((difference / this.startPrice) * 100);
+      this.percentChangeCountUp.update(this.percentChange);
     }
   }
 };
