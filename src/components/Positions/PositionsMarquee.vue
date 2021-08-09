@@ -49,6 +49,7 @@
 
 <script>
 import numeral from "numeral";
+import { isSymbolDollar, formatNumber } from "@/utils.js";
 
 const animationClass = "animate__flash";
 
@@ -83,7 +84,7 @@ export default {
     },
     getPositionPnlString(position) {
       let str = "";
-      if (this.isSymbolDollar(position.symbol)) {
+      if (isSymbolDollar(position.symbol)) {
         str = "$" + str;
       }
       if (Number(position.unRealizedProfit) < 0) {
@@ -96,16 +97,8 @@ export default {
         numeral(Math.abs(Number(position.unRealizedProfit))).format("0,0.00");
       return str;
     },
-    isSymbolDollar(symbol) {
-      if (symbol.slice(-4) === "USDT") {
-        return true;
-      }
-      return false;
-    },
-    formatNumber(n) {
-      if (Number(n) < 1000) return numeral(n).format("0,0.00");
-      return numeral(n).format("0,0");
-    }
+    isSymbolDollar,
+    formatNumber
   }
 };
 </script>

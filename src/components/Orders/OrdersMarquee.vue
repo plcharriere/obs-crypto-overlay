@@ -41,9 +41,7 @@
 </template>
 
 <script>
-import numeral from "numeral";
-
-import { formatEnum } from "@/main";
+import { isSymbolDollar, formatNumber, formatEnum } from "@/utils.js";
 
 const animationClass = "animate__flash";
 
@@ -82,19 +80,11 @@ export default {
       }
       return formatEnum(str);
     },
-    isSymbolDollar(symbol) {
-      if (symbol.slice(-4) === "USDT") {
-        return true;
-      }
-      return false;
-    },
     getOrderTypeString(type) {
       return formatEnum(type, false);
     },
-    formatNumber(n) {
-      if (Number(n) < 1000) return numeral(n).format("0,0.00");
-      return numeral(n).format("0,0");
-    }
+    isSymbolDollar,
+    formatNumber
   }
 };
 </script>
