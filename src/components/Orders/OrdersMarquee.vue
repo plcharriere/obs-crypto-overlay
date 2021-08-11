@@ -5,7 +5,7 @@
       style="flex-grow: 1;flex-shrink: 0;"
     >
       <span id="orders-title" class="animate__animated"
-        >Open orders ({{ orders.length }})</span
+        >{{ $t("open_orders") }} ({{ orders.length }})</span
       >
     </div>
     <marquee
@@ -53,8 +53,7 @@ const animationClass = "animate__flash";
 export default {
   name: "OrdersMarquee",
   props: {
-    orders: Array,
-    dualSidePosition: Boolean
+    orders: Array
   },
   watch: {
     orders: function() {
@@ -71,19 +70,10 @@ export default {
       return "text-red-500";
     },
     getOrderSideString(order) {
-      let str = "";
-      if (this.dualSidePosition) {
-        if (order.side === "BUY") str = "OPEN";
-        if (order.side === "SELL") str = "CLOSE";
-      } else {
-        str = order.side;
-      }
-      if (order.side === "BUY") {
-        str += " Long";
-      } else if (order.side === "SELL") {
-        str += " Short";
-      }
-      return formatEnum(str);
+      if (order.side.toLowerCase() === "buy") return this.$t("buy") + " / Long";
+      else if (order.side.toLowerCase() === "sell")
+        return this.$t("sell") + " / Short";
+      return "-";
     },
     getOrderTypeString(type) {
       return formatEnum(type, false);

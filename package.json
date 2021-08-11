@@ -15,6 +15,7 @@
     "lodash": "^4.17.21",
     "numeral": "^2.0.6",
     "vue": "^3.0.0",
+    "vue-i18n": "^9.1.7",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {

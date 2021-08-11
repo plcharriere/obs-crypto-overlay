@@ -5,7 +5,7 @@
       style="flex-grow: 1;flex-shrink: 0;"
     >
       <span id="positions-title" class="animate__animated"
-        >Positions ({{ positions.length }})</span
+        >{{ $t("positions") }} ({{ positions.length }})</span
       >
     </div>
     <marquee

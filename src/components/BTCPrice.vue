@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center justify-center text-black-shadow">
     <div class="text-xl font-medium text-binance">
-      Latest <span style="font-size:1.35rem">₿</span>itcoin Price
+      {{ $t("bitcoin_price") }}
     </div>
     <div class="flex items-center justify-center">
       <div

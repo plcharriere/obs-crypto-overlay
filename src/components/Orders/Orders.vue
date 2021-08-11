@@ -1,6 +1,6 @@
 <template>
   <!--<OrdersTable v-if="!marquee" :orders="orders" />-->
-  <OrdersMarquee :orders="orders" :dualSidePosition="dualSidePosition" />
+  <OrdersMarquee :orders="orders" />
 </template>
 
 <script>
@@ -8,7 +8,7 @@ const _ = require("lodash");
 
 import OrdersMarquee from "@/components/Orders/OrdersMarquee.vue";
 
-import { getFuturesOpenOrders, getFuturesPositionMode } from "@/binance";
+import { getFuturesOpenOrders } from "@/binance";
 
 export default {
   name: "Orders",
@@ -20,8 +20,7 @@ export default {
   },
   data() {
     return {
-      orders: [],
-      dualSidePosition: false
+      orders: []
     };
   },
   async mounted() {
@@ -33,7 +32,6 @@ export default {
   methods: {
     async refresh() {
       this.update(await getFuturesOpenOrders());
-      this.dualSidePosition = await getFuturesPositionMode();
     },
     update(orders) {
       orders.forEach(order => {

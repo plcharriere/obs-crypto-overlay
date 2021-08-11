@@ -14,7 +14,7 @@
       style="width: 460px"
     >
       <div class="text-xl font-medium text-binance">
-        Your Event Widget Here
+        {{ $t("your_event_widget_here") }}
       </div>
     </div>
   </div>

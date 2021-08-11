@@ -13,7 +13,7 @@ It will display your Binance Futures balance, positions and orders on screen.
 
 ## Warnings
 
-This app should __**NEVER BE EXPOSED TO THE INTERNET**__ since it contains your Binance Api Key and Secret Key.
+This app should __**NEVER BE EXPOSED TO THE INTERNET**__ since it contains your Binance API Key and Secret Key.
 
 Be sure to disable any trade permission for your keys on Binance.
 
@@ -26,7 +26,19 @@ npm install
 cp .env.example .env
 ```
 
-Configure your `.env` file with your name and your Binance keys.
+Configure your `.env` file with your name, your Binance keys and your goal.
+
+```
+VUE_APP_SOCIAL_USERNAME=YourUsername  # Your Twitter and Instagram username
+
+VUE_APP_BINANCE_API_KEY=              # Your Binance API Key
+VUE_APP_BINANCE_SECRET_KEY=           # Your Binance Secret Key
+
+VUE_APP_GOAL_START=500                # Starting amount of your balance
+VUE_APP_GOAL_END=5000                 # Goal amount of your balance
+
+VUE_APP_LANGUAGE=en                   # Language of the app 'en' or 'fr'
+```
 
 ## How to use
 
