@@ -34,7 +34,7 @@
         class="italic"
         style="word-spacing: normal;"
         v-if="!orders || orders.length == 0"
-        >No order for now.</span
+        >{{ $t("no_open_order") }}</span
       >
     </marquee>
   </div>

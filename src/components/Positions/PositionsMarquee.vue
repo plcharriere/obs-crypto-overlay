@@ -41,7 +41,7 @@
         class="italic"
         style="word-spacing: normal;"
         v-if="!positions || positions.length == 0"
-        >No position for now.</span
+        >{{ $t("no_position") }}</span
       >
     </marquee>
   </div>
